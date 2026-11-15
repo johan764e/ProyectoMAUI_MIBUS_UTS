@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_MIBUS_UTS.EnVivoPage"
+             BackgroundColor="#F7F5FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="20">
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Estado del camión"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="#59358C"/>
+
+                <Label Text="Ruta 2 · Reporte del chofer"
+                       FontSize="14"
+                       TextColor="#777777"/>
+            </VerticalStackLayout>
+
+            <!-- Reporte actual del chofer -->
+            <Border BackgroundColor="#E8F5E9"
+                    Stroke="#C8E6C9"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="20">
+
+                <VerticalStackLayout HorizontalOptions="Center"
+                                     Spacing="8">
+                    <Label Text="✅"
+                           FontSize="40"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Text="Sin problemas"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="#2E7D32"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Text="El chofer confirmó que el camión sí pasará"
+                           FontSize="13"
+                           TextColor="#777777"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Text="Reportado a las 7:58"
+                           FontSize="12"
+                           TextColor="#777777"
+                           HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Estados que puede reportar el chofer -->
+            <Label Text="Estados que reporta el chofer"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#333333"/>
+
+            <Border BackgroundColor="White"
+                    Stroke="#E5DDED"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="15">
+
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="✅  Sin problemas: el camión pasa a su hora"
+                           FontSize="14"
+                           TextColor="#333333"/>
+                    <Label Text="⚠️  Retraso: el camión llegará más tarde"
+                           FontSize="14"
+                           TextColor="#333333"/>
+                    <Label Text="⛔  No pasará: hay un problema con el camión"
+                           FontSize="14"
+                           TextColor="#333333"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Alarma de llegada -->
+            <Label Text="Alarma de llegada"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#333333"/>
+
+            <Border BackgroundColor="White"
+                    Stroke="#E5DDED"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="15">
+
+                <Grid ColumnDefinitions="*,Auto">
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Avisarme 10 minutos antes"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#59358C"/>
+                        <Label Text="Hospital General · Llegada 8:23"
+                               FontSize="13"
+                               TextColor="#777777"/>
+                    </VerticalStackLayout>
+
+                    <Switch Grid.Column="1"
+                            IsToggled="True"
+                            OnColor="#59358C"
+                            VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Horarios -->
+            <Label Text="Próximas zonas"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#333333"/>
+
+            <Border BackgroundColor="White"
+                    Stroke="#E5DDED"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="15">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Hospital General"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#59358C"/>
+                        <Label Grid.Column="1"
+                               Text="8:23"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#333333"/>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Universidad"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#59358C"/>
+                        <Label Grid.Column="1"
+                               Text="8:45"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#333333"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Volver al inicio"
+                    Clicked="OnVolverClicked"
+                    BackgroundColor="White"
+                    TextColor="#59358C"
+                    BorderColor="#D6C8E8"
+                    BorderWidth="1"
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    HeightRequest="50"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

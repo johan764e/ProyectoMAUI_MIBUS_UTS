@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_MIBUS_UTS.MainPage"
+             BackgroundColor="#F7F5FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="20">
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Mi Bus UTS"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="#59358C"/>
+
+                <Label Text="Consulta las rutas y paradas de tu transporte"
+                       FontSize="14"
+                       TextColor="#777777"/>
+
+
+            </VerticalStackLayout>
+
+
+            <Label Text="Mapa de rutas"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#333333"/>
+
+            <Border BackgroundColor="#E9E2F2"
+                    Stroke="#D6C8E8"
+                    StrokeThickness="1"
+                    HeightRequest="300"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="15">
+
+                <Grid>
+                    <VerticalStackLayout
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Spacing="10">
+                        <Label Text="📍"
+                               FontSize="40"
+                               HorizontalTextAlignment="Center"/>
+
+                        <Label Text="Mapa de rutas y paradas"
+                               FontSize="17"
+                               FontAttributes="Bold"
+                               TextColor="#59358C"
+                               HorizontalTextAlignment="Center"/>
+
+                        <Label Text="Aquí se mostrará el mapa de los autobuses"
+                               FontSize="13"
+                               TextColor="#777777"
+                               HorizontalTextAlignment="Center"/>
+
+
+
+                    </VerticalStackLayout>
+                </Grid>
+
+            </Border>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Rutas disponibles"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#333333"/>
+
+                <Label Text="Toca una ruta para ver su recorrido"
+                       FontSize="13"
+                       TextColor="#777777"/>
+            </VerticalStackLayout>
+
+            <!-- Lista de rutas: se llena desde MainPage.xaml.cs -->
+            <VerticalStackLayout x:Name="listaRutas" Spacing="12">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Border BackgroundColor="White"
+                                Stroke="#E5DDED"
+                                StrokeShape="RoundRectangle 12"
+                                Padding="15">
+
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRutaTapped"/>
+                            </Border.GestureRecognizers>
+
+                            <Grid ColumnDefinitions="*,Auto">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="{Binding Nombre}"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#59358C"/>
+
+                                    <Label Text="{Binding Salida, StringFormat='Salida: {0}'}"
+                                           FontSize="13"
+                                           TextColor="#777777"/>
+                                </VerticalStackLayout>
+
+                                <Label Grid.Column="1"
+                                       Text="Ver ruta ›"
+                                       FontSize="13"
+                                       FontAttributes="Bold"
+                                       TextColor="#59358C"
+                                       VerticalOptions="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
+            <Label Text="Llegada a cada zona"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#333333"/>
+
+            <Border BackgroundColor="White"
+                    Stroke="#E5DDED"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="15">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout Spacing="2">
+                            <Label Text="Terminal Central"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   TextColor="#59358C"/>
+                            <Label Text="Zona Centro"
+                                   FontSize="13"
+                                   TextColor="#777777"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="1"
+                               Text="8:05"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#333333"
+                               VerticalOptions="Center"/>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout Spacing="2">
+                            <Label Text="Plaza Principal"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   TextColor="#59358C"/>
+                            <Label Text="Zona Centro Histórico"
+                                   FontSize="13"
+                                   TextColor="#777777"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="1"
+                               Text="8:14"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#333333"
+                               VerticalOptions="Center"/>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout Spacing="2">
+                            <Label Text="Hospital General"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   TextColor="#59358C"/>
+                            <Label Text="Zona Salud"
+                                   FontSize="13"
+                                   TextColor="#777777"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="1"
+                               Text="8:23"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#333333"
+                               VerticalOptions="Center"/>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout Spacing="2">
+                            <Label Text="Universidad"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   TextColor="#59358C"/>
+                            <Label Text="Zona Universitaria"
+                                   FontSize="13"
+                                   TextColor="#777777"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="1"
+                               Text="8:45"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#333333"
+                               VerticalOptions="Center"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Ver estado del camión"
+                    Clicked="OnVerCamionClicked"
+                    BackgroundColor="#59358C"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    HeightRequest="50"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

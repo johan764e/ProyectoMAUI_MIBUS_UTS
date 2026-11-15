@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_MIBUS_UTS.RutaDetallePage"
+             BackgroundColor="#F7F5FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="20">
+
+            <VerticalStackLayout Spacing="5">
+                <Label x:Name="lblNombre"
+                       Text="Ruta"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="#59358C"/>
+
+                <Label Text="Recorrido de la ruta"
+                       FontSize="14"
+                       TextColor="#777777"/>
+            </VerticalStackLayout>
+
+            <Border BackgroundColor="White"
+                    Stroke="#E5DDED"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="15">
+
+                <Grid ColumnDefinitions="*,*">
+                    <VerticalStackLayout Spacing="2">
+                        <Label Text="Hora de salida"
+                               FontSize="13"
+                               TextColor="#777777"/>
+                        <Label x:Name="lblSalida"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#59358C"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Hora de llegada"
+                               FontSize="13"
+                               TextColor="#777777"/>
+                        <Label x:Name="lblLlegada"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#59358C"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Border BackgroundColor="White"
+                    Stroke="#E5DDED"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18">
+
+                <Image x:Name="imgRuta"
+                       Aspect="AspectFit"/>
+            </Border>
+
+            <Button Text="Volver"
+                    Clicked="OnVolverClicked"
+                    BackgroundColor="#59358C"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    HeightRequest="50"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
