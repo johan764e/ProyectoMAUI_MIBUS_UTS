@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MAUI_MIBUS_UTS.HarryParte"
+            Title="HarryParte">
+
+    <Grid RowDefinitions="*, Auto" BackgroundColor="#E5EAE3">
+
+        <Border Grid.Row="0"
+               VerticalOptions="Start"
+               BackgroundColor="White"
+               StrokeThickness="0"
+               StrokeShape="RoundRectangle 0,0,20,20"
+               Padding="20,16">
+            <VerticalStackLayout Spacing="8">
+                <HorizontalStackLayout Spacing="10">
+                    <Ellipse WidthRequest="10" HeightRequest="10" Fill="#C0392B" VerticalOptions="Center"/>
+                    <Label Text="Terminal Central" FontSize="13" TextColor="#2C3E50" FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="10">
+                    <Rectangle WidthRequest="10" HeightRequest="10" Fill="#1E272C" VerticalOptions="Center"/>
+                    <Label Text="Universidad" FontSize="13" TextColor="#2C3E50" FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Border>
+
+        <VerticalStackLayout Grid.Row="0"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="0,50,0,0"
+                            Spacing="8">
+            <Label Text="📍"
+                  FontSize="40"
+                  HorizontalTextAlignment="Center"/>
+
+            <Label Text="Mapa de rutas y paradas"
+                  FontSize="17"
+                  FontAttributes="Bold"
+                  TextColor="#59358C"
+                  HorizontalTextAlignment="Center"/>
+
+            <Label Text="Aquí se mostrará el mapa de los autobuses"
+                  FontSize="13"
+                  TextColor="#777777"
+                  HorizontalTextAlignment="Center"/>
+        </VerticalStackLayout>
+
+        <Border Grid.Row="1"
+               BackgroundColor="White"
+               StrokeThickness="0"
+               StrokeShape="RoundRectangle 24,24,0,0"
+               Padding="20,12,20,20">
+
+            <VerticalStackLayout Spacing="12">
+
+                <BoxView WidthRequest="40" HeightRequest="4"
+                        BackgroundColor="#BDC3C7"
+                        HorizontalOptions="Center"
+                        CornerRadius="2"/>
+
+                <Grid ColumnDefinitions="*, Auto" VerticalOptions="Center">
+                    <Label Text="Camion 37 · Ruta 2"
+                          FontSize="18"
+                          FontAttributes="Bold"
+                          TextColor="#1E272C"/>
+                    <Border Grid.Column="1" 
+                           BackgroundColor="#FDEBD0" 
+                           StrokeThickness="0" 
+                           Padding="10,4" 
+                           StrokeShape="RoundRectangle 8">
+                        <Label Text="En vivo" 
+                              FontSize="11" 
+                              FontAttributes="Bold" 
+                              TextColor="#D35400" />
+                    </Border>
+                </Grid>
+
+                <VerticalStackLayout Spacing="0">
+
+                    <Grid ColumnDefinitions="28, *, Auto" RowDefinitions="Auto, Auto">
+                        <Ellipse Grid.Row="0" Grid.Column="0" WidthRequest="10" HeightRequest="10" Fill="#C0392B" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <BoxView Grid.Row="1" Grid.Column="0" WidthRequest="2" HeightRequest="20" BackgroundColor="#C0392B" HorizontalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Terminal Central" FontAttributes="Bold" TextColor="#2C3E50" FontSize="13"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="Zona Centro" TextColor="#7F8C8D" FontSize="11"/>
+                        <VerticalStackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" HorizontalOptions="End">
+                            <Label Text="8:05" FontSize="12" FontAttributes="Bold" TextColor="#2C3E50" HorizontalOptions="End"/>
+                            <Label Text="Salió" FontSize="10" TextColor="#7F8C8D" HorizontalOptions="End"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="28, *, Auto" RowDefinitions="Auto, Auto">
+                        <Ellipse Grid.Row="0" Grid.Column="0" WidthRequest="10" HeightRequest="10" Fill="#C0392B" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <BoxView Grid.Row="1" Grid.Column="0" WidthRequest="2" HeightRequest="20" BackgroundColor="#C0392B" HorizontalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Plaza Principal" FontAttributes="Bold" TextColor="#2C3E50" FontSize="13"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="Zona Centro Histórico" TextColor="#7F8C8D" FontSize="11"/>
+                        <VerticalStackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" HorizontalOptions="End">
+                            <Label Text="8:14" FontSize="12" FontAttributes="Bold" TextColor="#2C3E50" HorizontalOptions="End"/>
+                            <Label Text="Pasó" FontSize="10" TextColor="#7F8C8D" HorizontalOptions="End"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Border StrokeThickness="0" BackgroundColor="#FDEBD0" StrokeShape="RoundRectangle 8" Padding="6,4" Margin="-6,0">
+                        <Grid ColumnDefinitions="28, *, Auto" RowDefinitions="Auto, Auto">
+                            <Ellipse Grid.Row="0" Grid.Column="0" WidthRequest="12" HeightRequest="12" Fill="White" Stroke="#D35400" StrokeThickness="3" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <BoxView Grid.Row="1" Grid.Column="0" WidthRequest="2" HeightRequest="20" BackgroundColor="#D35400" HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Hospital General" FontAttributes="Bold" TextColor="#2C3E50" FontSize="13"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="Tu parada · Zona Salud" TextColor="#7F8C8D" FontSize="11"/>
+                            <VerticalStackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" HorizontalOptions="End">
+                                <Label Text="8:25" FontSize="12" FontAttributes="Bold" TextColor="#D35400" HorizontalOptions="End"/>
+                                <Label Text="En 6 min" FontSize="10" TextColor="#D35400" HorizontalOptions="End"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <Grid ColumnDefinitions="28, *, Auto" RowDefinitions="Auto, Auto">
+                        <Ellipse Grid.Row="0" Grid.Column="0" WidthRequest="10" HeightRequest="10" Fill="White" Stroke="#C0392B" StrokeThickness="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <BoxView Grid.Row="1" Grid.Column="0" WidthRequest="2" HeightRequest="20" BackgroundColor="#C0392B" HorizontalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Parque Industrial" FontAttributes="Bold" TextColor="#2C3E50" FontSize="13"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="Zona Industrial" TextColor="#7F8C8D" FontSize="11"/>
+                        <VerticalStackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" HorizontalOptions="End">
+                            <Label Text="8:36" FontSize="12" FontAttributes="Bold" TextColor="#2C3E50" HorizontalOptions="End"/>
+                            <Label Text="En 17 min" FontSize="10" TextColor="#7F8C8D" HorizontalOptions="End"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="28, *, Auto" RowDefinitions="Auto, Auto">
+                        <Ellipse Grid.Row="0" Grid.Column="0" WidthRequest="10" HeightRequest="10" Fill="#C0392B" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Universidad Tecnologia del sur de sonora" FontAttributes="Bold" TextColor="#2C3E50" FontSize="13"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="Zona Universitaria" TextColor="#7F8C8D" FontSize="11"/>
+                        <VerticalStackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" HorizontalOptions="End">
+                            <Label Text="8:47" FontSize="12" FontAttributes="Bold" TextColor="#2C3E50" HorizontalOptions="End"/>
+                            <Label Text="En 28 min" FontSize="10" TextColor="#7F8C8D" HorizontalOptions="End"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </Border>
+
+    </Grid>
+</ContentPage>
+
